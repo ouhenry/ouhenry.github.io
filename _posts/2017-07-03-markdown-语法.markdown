@@ -1,4 +1,4 @@
-# MacDown
+#markdown
 
 ![MacDown logo](http://macdown.uranusjr.com/static/images/logo-160.png)
 
@@ -201,11 +201,11 @@ The ***Smartypants*** extension automatically transforms straight quotes (`"` an
 
 This is a table:
 
-First Header  | Second Header
+{{ page.excerpt | First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
-
+}}
 You can align cell contents with syntax like this:
 
 | Left Aligned  | Center Aligned  | Right Aligned |
@@ -349,4 +349,4 @@ Happy writing!
 [^math]: Internet connection required.
 
 
-
+{{page.excerpt | markdownify}}

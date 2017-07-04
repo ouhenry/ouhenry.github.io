@@ -1,3 +1,15 @@
-#第一篇github pages 发表的博客
-###怎样优雅的写博客呢
-  语言是思维的外衣。
+---
+layout: post
+title: "第一篇github pages 发表的博客"
+date: 2017-07-03 17:24:48 +0800
+categories: 呢喃
+---
+怎样优雅的写博客呢
+  语言是思维的外衣。成功是你经历过无数次失败之后仍然保持激情。
+{% highlight ruby %}
+def print_hi(name)
+   puts "hi, #{name}"
+end
+print_hi('rickberg')
+#=> prints 'hi, tom' to STDOUT.
+{% endhighlight %}
