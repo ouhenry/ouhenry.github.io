@@ -17,37 +17,55 @@ categories: swift
 
 ### Core OS
 
-- **OSX Kernel**     - **Power Management**
-- **Mach 3.0**     - **Keychain Access**
-- **BSD**     - **Certificates**
-- **Sockets**     - **File System**
-- **Security**     - **Bonjur**
+- **OSX Kernel**     
+- **Power Management**
+- **Mach 3.0**     
+- **Keychain Access**
+- **BSD**     
+- **Certificates**
+- **Sockets**     
+- **File System**
+- **Security**     
+- **Bonjur**
 
 ### Core Services
 
-- **Collections**     - **Core Location**
-- **Address Book**     - **Net Services**
-- **Networking**     - **Threading**
-- **File Access**     - **Preferences**
-- **SQLite**     - **URL Utilities**
+- **Collections**     
+- **Core Location**
+- **Address Book**     
+- **Net Services**
+- **Networking**     
+- **Threading**
+- **File Access**     
+- **Preferences**
+- **SQLite**     
+- **URL Utilities**
 
 
 ### Media
 
-- **Core Auto**     - **JPEG,PNG,TIFF**
-- **OpenAL**     - **PDF**
-- **Audio mixing**     - **Quartz(2D)**
-- **Audio Recording**     - **Core Animation**
-- **Video Playback**     - **OpenGL ES**
+- **Core Auto**     
+- **JPEG,PNG,TIFF**
+- **OpenAL**     
+- **PDF**
+- **Audio mixing**     
+- **Quartz(2D)**
+- **Audio Recording**     
+- **Core Animation**
+- **Video Playback**     
+- **OpenGL ES**
 
 ### Cocoa Touch
 
-- **Multi-Touch**     - **Alerts**
-- **Core Motion**     - **Web View**
-- **View Hieratchy**     - **Map Kit**
-- **Localization**     - **Image Picker**
-- **Controls**     - **Camera**
+- **Multi-Touch**     
+- **Alerts**
+- **Core Motion**     
+- **Web View**
+- **View Hieratchy**     
+- **Map Kit**
+- **Localization**     
+- **Image Picker**
+- **Controls**     
+- **Camera**
 
 
-
- 
