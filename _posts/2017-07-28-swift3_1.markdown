@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "Welcome to swift!"
+date:   2017-06-30 17:24:48 +0800
+categories: swift
+---
+      吾尝终日而思，不如盱眙之所学也。
+#目标
+
+- **创建一个好的apps**
+- **实现面向对象编程
+
+
+##iOS的组成
+   iOS主要有四大部分Core OS、Core Services、Media、Cocoa Touch。
+
+### Core OS
+```
+- **OSX Kernel**     - **Power Management**
+- **Mach 3.0**     - **Keychain Access**
+- **BSD**     - **Certificates**
+- **Sockets**     - **File System**
+- **Security**     - **Bonjur**
+```
+### Core Services
+```
+- **Collections**     - **Core Location**
+- **Address Book**     - **Net Services**
+- **Networking**     - **Threading**
+- **File Access**     - **Preferences**
+- **SQLite**     - **URL Utilities**
+```
+
+### Media
+```
+- **Core Auto**     - **JPEG,PNG,TIFF**
+- **OpenAL**     - **PDF**
+- **Audio mixing**     - **Quartz(2D)**
+- **Audio Recording**     - **Core Animation**
+- **Video Playback**     - **OpenGL ES**
+```
+
+### Cocoa Touch
+```
+- **Multi-Touch**     - **Alerts**
+- **Core Motion**     - **Web View**
+- **View Hieratchy**     - **Map Kit**
+- **Localization**     - **Image Picker**
+- **Controls**     - **Camera**
+```
+
+
+ 
