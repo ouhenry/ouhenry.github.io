@@ -13,3 +13,12 @@
 9.证券交易
 10.使用学习型算法使一个人脸变得更加具有新引力。
 11.光学错觉。
+
+
+numpy & scipy : python的数值计算 & 科学计算基础工具。
+pandas : Python数据分析scikit-learn : Machine learning in Python, 常见的机器学习算法基本都有实现。
+scikit-image : Image processing in Python, 这个没用过，图像方面的可以看看。
+xgboost : 梯度增强算法库，c++写的，有python接口。
+vowpal_wabbit: a fast out-of-core learning system sponsored by Microsoft Research and (previously) Yahoo! Research. 
+DMLC | Distributed (Deep) Machine Learning Common 的一系列项目
+
