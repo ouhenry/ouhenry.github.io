@@ -1,0 +1,78 @@
+**线性表： 由同类型数据元素构成有序序列的线性结构**
+
+- 表中元素个数称为线性表的*长度*
+- 线性表没有元素时，称为*空表*
+- 表起始位置称为表头，表结束位置称为*表尾*
+
+线性表基本操作：
+
+1. List MakeEmpty(): 初始一个空线性表L
+2. ElementType FindKth(int K, List L):根据位序K，返回相应元素；
+3. init Find(ElementType X, List L): 在线性表L中查找X的第一次出现位置；
+4. void Insert(ElementType X, int i, List L):在位序i前插入一个新元素X；
+5. void Delete(int i, List L):删除制定位序i的元素；
+6. int Length(List L):返回线性表L的长度n.
+
+**线性表的顺序存储实现**
+
+    typedef struct LNODE *List;
+
+	structLNode{
+		ElementType Data[MAXSIZE];
+		int Last;
+	}
+	struct LNode L;
+	List PtrL;
+
+1.初始化（建立空的顺序表）
+    
+	List MakeEmpty()
+
+	{	ListPtrL;
+		PtrL = (List)malloc(sizeof(struct LNode));
+		PtrL->Last = -1;
+		return PtrL;
+	}
+
+2.查找
+	
+	int Find(ElementType X, List PtrL)
+	{	int i = 0;
+		while(i <= PtrL -> last && PtrL -> Data[i]!=X)
+			i++;
+		if (i > PtrL -> Last) return -1;
+		else return i;
+	}
+
+3.插入操作实现
+
+    void Insert(ElementType X, int i, List PtrL)
+	{	int j;
+		if(PtrL->Last == MAXSIZE-1){
+			print("表满");
+			return;
+		}
+		if (i < 1 || i > PtrL->Last+2){
+			print("位置不合法")；
+			return;
+		}
+		for (j = PtrL->Last; i >= i-1; j--)
+			PtrL->Data[i+1] = PtrL->Data[j];
+		PtrL->Data[i-1] = X;
+		PtrL->Last++;
+		return;
+	}
+
+4.删除（删除表的第i(1 <= i <= n)个位置上的元素）
+
+    void Delete(int i, List PtrL)
+	{	int j;
+		if (i < 1 || i > PtrL->Last + 1){
+			printf("不存在第%d个元素"， i);
+			return;
+		}
+		for (j = 1; j <=PtrL->Last; j++)
+			PtrL->Data[j-1] = PtrL->Data[j];
+		PtrL->Last--;
+		return;
+	}
