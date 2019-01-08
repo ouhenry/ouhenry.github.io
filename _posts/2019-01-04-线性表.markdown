@@ -15,7 +15,7 @@
 
 **线性表的顺序存储实现**
 
-    typedef struct LNODE *List;
+    typedef struct LNode *List;
 
 	structLNode{
 		ElementType Data[MAXSIZE];
@@ -75,4 +75,108 @@
 			PtrL->Data[j-1] = PtrL->Data[j];
 		PtrL->Last--;
 		return;
+	}
+
+**线性表的链式存储**
+
+不要求逻辑上相邻的两个元素物理上也相邻；通过“链”立起数据元素之间的逻辑关系。
+插入、删除不需要移动数据元素，只需要修改“链”
+
+    typedef struct LNode *List;
+	struct LNode{
+		ElementType Data;
+		List Next;
+	};
+	struct LNode L;
+	List PtrL;
+
+主要操作的实现
+
+1.求表长
+    
+    intLength(List PtrL)
+	{ 
+		List p = PtrL;
+		int j = 0;
+		while(p){
+			p = p->Next;
+			j++;
+		}
+		return j;
+	}
+
+2.查找
+
+（1）按序号查找：FindKth;
+
+    List FindKth(int K, List PtrL)
+	{
+		List p = PtrL;
+		int i = 1;
+		while(p != Null && i < K){
+			p = p -> Next;
+			i++;
+		}
+		if (i == k) return p;
+		else return NULL;
+	}
+
+ (2) 按值查找： Find
+
+    List Find(ElementType X, List PtrL)
+	{
+		List p = PtrL;
+		While(p != NULL && P->Data != X)
+			p = p->Next;
+		reutrn p;
+	}
+
+3.插入操作实现
+
+    List Inster(ElementType X, int i, List PtrL)
+	{
+		List p, s;
+		if (i == 1){
+			s = (List)malloc(sizeof(struct LNode));
+			s->data= X;
+			s->Next = PtrL;
+			return s;
+		}
+		p = FindKth(i - 1, PtrL);
+		if(p == Null){
+			printf("参数i错")；
+			return NULL;
+		} else {
+			s = (List)malloc(sizeof(struct LNode));
+			s->Data = X;
+			s->Next = p->Next;
+			p->Next = s;
+			return PtrL;
+		}
+	}
+
+4.删除操作实现
+
+    List Delete(int i, List PtrL)
+	{
+		if (i == 1){
+			s = PtrL;
+			if (PtrL!=NULL) PtrL = PtrL->Next;
+			else return NULL;
+			free(s);
+			return PtrL;
+		}
+		p = FindKth(i-1, PtrL);
+		if (p == NULL){
+			printf("第%d个结点不存在"， i-1);
+			return NULL;
+		} else if (p -> == NULL){
+			printf("第%d个结点不存在"， i);
+			return NULL;
+		} else{
+			s = p->Next;
+			p->Next = s->Next;
+			free(s);
+			return PtrL;
+		}
 	}
