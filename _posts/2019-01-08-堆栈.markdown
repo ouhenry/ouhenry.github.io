@@ -1,0 +1,143 @@
+**堆栈**
+
+具有一定操作约束的线性表
+只在一端（栈顶，Top）做插入、删除
+
+
+- 插入数据：*入栈（Push）*
+- 删除数据：*出栈（Pop）*
+- *后入先出*： Last In First Out(LIFO)
+
+
+主要操作
+
+1. Stack CreateStack(int MaxSize): 生成空堆栈， 其最大长度为MaxSize;
+2. int IsFull(Stack S, int MaxSize): 判断堆栈S是否已满；
+3. void Push(Stack S, ElementType item):将元素item压入堆栈；
+4. int IsEmpty(Stack S): 判断堆栈S是否为空；
+5. ElementType Pop(Stack S): 删除并返回栈顶元素；
+
+****栈的顺序存储实现****
+
+栈的顺序存储结构通常由一个一维数组和一个记录栈顶元素位置的变量组成
+
+    typedef int Position;
+	struct SNode {
+    	ElementType *Data; /* 存储元素的数组 */
+    	Position Top;      /* 栈顶指针 */
+    	int MaxSize;       /* 堆栈最大容量 */
+	};
+	typedef struct SNode *Stack;
+
+ 1.创建栈
+
+    Stack CreateStack( int MaxSize )
+	{
+    	Stack S = (Stack)malloc(sizeof(struct SNode));
+    	S->Data = (ElementType *)malloc(MaxSize * sizeof(ElementType));
+    	S->Top = -1;
+    	S->MaxSize = MaxSize;
+    	return S;
+	}
+
+2.判栈满
+
+    bool IsFull( Stack S )
+	{
+    	return (S->Top == S->MaxSize-1);
+	}
+ 
+3.入栈
+
+    bool Push( Stack S, ElementType X )
+	{
+    	if ( IsFull(S) ) {
+        	printf("堆栈满");
+        	return false;
+    	}
+    	else {
+        	S->Data[++(S->Top)] = X;
+        	return true;
+    	}
+	}
+
+4.判栈空
+
+	bool IsEmpty( Stack S )
+	{
+    	return (S->Top == -1);
+	}
+
+5.出栈
+
+	ElementType Pop( Stack S)
+	{
+    	if ( IsEmpty(S) ) {
+        	printf("堆栈空");
+        	return ERROR; /* ERROR是ElementType的特殊值，标志错误 */
+    	}
+    	else 
+        	return (S->Data[(S->Top)--]);
+	}
+
+****栈的链式存储实现****
+
+栈的链式存储结构实际上是一个单链表， 叫做链栈。插入和删除操作只能在栈的栈顶进行。
+
+	typedef struct SNode *PtrToSNode;
+	struct SNode {
+    	ElementType Data;
+    	PtrToSNode Next;
+	};
+	typedef PtrToSNode Stack;
+
+1.创建栈
+
+	Stack CreateStack( ) 
+	{ /* 构建一个堆栈的头结点，返回该结点指针 */
+    	Stack S;
+ 
+    	S = (Stack)malloc(sizeof(struct SNode));
+    	S->Next = NULL;
+    	return S;
+	}
+
+2.判栈空
+
+	bool IsEmpty ( Stack S )
+	{ /* 判断堆栈S是否为空，若是返回true；否则返回false */
+    	return ( S->Next == NULL );
+	}
+
+3.入栈
+
+	bool Push( Stack S, ElementType X )
+	{ /* 将元素X压入堆栈S */
+    	PtrToSNode TmpCell;
+ 
+    	TmpCell = (PtrToSNode)malloc(sizeof(struct SNode));
+    	TmpCell->Data = X;
+    	TmpCell->Next = S->Next;
+    	S->Next = TmpCell;
+    	return true;
+	}
+
+4.出栈
+
+	ElementType Pop(Stack S)  
+	{ /* 删除并返回堆栈S的栈顶元素 */
+    	PtrToSNode FirstCell;
+    	ElementType TopElem;
+ 
+    	if(IsEmpty(S)) {
+        	printf("堆栈空"); 
+        	return ERROR;
+    	}
+    	else {
+        	FirstCell = S->Next; 
+        	TopElem = FirstCell->Data;
+        	S->Next = FirstCell->Next;
+        	free(FirstCell);
+        	return TopElem;
+    	}
+	}
