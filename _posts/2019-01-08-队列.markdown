@@ -1,0 +1,133 @@
+#什么是队列
+
+具有一定操作约束的线性表、
+
+	只能在一端插入，在另一端删除
+
+- 数据插入：*入队列（AddQ)*
+- 数据删除：*出队列（DeleteQ）*
+- *先来先服务*
+- *先进先出*： FIFO
+
+
+**操作集**
+
+1. Queue CreateQueue(int MaxSize):生成长度为MaxSize的空队列；
+2. int IsFullQ(Queue Q, int MaxSize):判断队列Q是否已满；
+3. void AddQ(Queue Q, ElementType item):将数据元素item插入队列Q中；
+4. int IsEmptyQ(Queue Q):判断Q是否为空；
+5. ElementType DeleteQ(Queue Q):将队头数据元素从队列中删除并返回。
+
+**队列的顺序存储实现**
+
+队列的顺序存储结构通常由一个一维数组和一个记录队列头元素位置的变量front以及一个记录队列尾元素位置的rear组成。
+
+	typedef int Position;
+	struct QNode {
+    	ElementType *Data;     /* 存储元素的数组 */
+    	Position Front, Rear;  /* 队列的头、尾指针 */
+    	int MaxSize;           /* 队列最大容量 */
+	};
+	typedef struct QNode *Queue;
+
+1.创建队列
+
+	Queue CreateQueue(int MaxSize)
+	{
+    	Queue Q = (Queue)malloc(sizeof(struct QNode));
+    	Q->Data = (ElementType *)malloc(MaxSize * sizeof(ElementType));
+    	Q->Front = Q->Rear = 0;
+    	Q->MaxSize = MaxSize;
+    	return Q;
+	}
+
+2.判断队列是否满
+
+	bool IsFull(Queue Q)
+	{
+    	return ((Q->Rear+1)%Q->MaxSize == Q->Front);
+	}
+
+3.添加
+
+	bool AddQ( Queue Q, ElementType X)
+	{
+    	if ( IsFull(Q) ) {
+        	printf("队列满");
+        	return false;
+    	}
+    	else {
+        	Q->Rear = (Q->Rear+1)%Q->MaxSize;
+        	Q->Data[Q->Rear] = X;
+        	return true;
+    	}
+}
+
+4.判断是否为空
+
+	bool IsEmpty( Queue Q )
+	{
+    	return (Q->Front == Q->Rear);
+	}
+
+5.删除元素
+
+	ElementType DeleteQ(Queue Q)
+	{
+    	if ( IsEmpty(Q) ) { 
+        	printf("队列空");
+        	return ERROR;
+    	}
+    	else  {
+        	Q->Front =(Q->Front+1)%Q->MaxSize;
+        	return  Q->Data[Q->Front];
+    	}
+	}
+
+**队列的链式存储实现**
+
+队列的链式存储结构也可以用一个单链表实现。插入和删除操作分别在链表的两头进行；
+
+	typedef struct Node *PtrToNode;
+	struct Node { /* 队列中的结点 */
+    	ElementType Data;
+    	PtrToNode Next;
+	};
+	typedef PtrToNode Position;
+ 
+	struct QNode {
+    	Position Front, Rear;  /* 队列的头、尾指针 */
+    	int MaxSize;           /* 队列最大容量 */
+	};
+	typedef struct QNode *Queue;
+
+1.判空
+
+	bool IsEmpty( Queue Q )
+	{
+    	return ( Q->Front == NULL);
+	}
+
+2.删除
+
+	ElementType DeleteQ( Queue Q )
+	{
+   	 	Position FrontCell; 
+    	ElementType FrontElem;
+     
+    	if  ( IsEmpty(Q) ) {
+        printf("队列空");
+        return ERROR;
+    	}
+    	else {
+        	FrontCell = Q->Front;
+        	if ( Q->Front == Q->Rear ) /* 若队列只有一个元素 */
+            	Q->Front = Q->Rear = NULL; /* 删除后队列置为空 */
+        	else                     
+            	Q->Front = Q->Front->Next;
+        	FrontElem = FrontCell->Data;
+ 
+        	free( FrontCell );  /* 释放被删除结点空间  */
+       	 	return  FrontElem;
+    	}
+	}
