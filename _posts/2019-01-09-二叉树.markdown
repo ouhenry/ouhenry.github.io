@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "堆栈"
+title:  "二叉树"
 date:   2019-01-09 16:34:48 +0800
 categories: 数据结构
 ---
@@ -130,6 +130,7 @@ n个结点的完全二叉树的结点父子关系：
 2. 访问该元素所指几点；
 3. 若该元素所指结点的左、右结点非空，则将其左、右孩子的指针顺序入队。
 
+代码：
 
 	void LevelorderTraversal ( BinTree BT )
 	{ 
