@@ -1,0 +1,21 @@
+**什么是堆**
+
+>优先队列（Priority Queue）:特殊的“队列”，取出元素的顺序是依照元素的优先权（关键字）大小，而不是元素进入队列的先后顺序。
+
+**堆的两个特性**
+
+- 机构性：用数组表示的完全二叉树；
+- 有序性：任一节点的关键字是其子树所有节点的最大值（或最小值）
+
+	1.“最大堆（MaxHeap)”,也称"大顶堆"：最大值
+	2.“最小堆（MinHeap）”,也称"小顶堆"：最小值
+
+
+
+**最大堆**
+
+- MaxHeap Creat(int MaxSize)：创建一个空的最大堆。
+- Boolean IsFull(MaxHeap H): 判断最大堆H是否已满。
+- Insert(MaxHeap H, ElementType item): 将元素item插入最大堆H。
+- Boolean IsEmpty(MaxHeap H):判断最大堆H是否为空。
+- ElementType DeleteMax(MaxHeap H):返回H中最大元素（高优先级）
