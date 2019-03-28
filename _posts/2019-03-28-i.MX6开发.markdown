@@ -1,0 +1,21 @@
+1.安装VMWare虚拟机 16.04 ubuntu系统
+2.安装arm 设置arm环境变量
+```
+	export PATH=$PATH:/usr/local/arm/arm-2009q3/bin
+```
+
+3.安装nfs-util rpcbind 共享数据单元
+	apt-get install nfs-kernel-server nfs-common
+重启nfs	/etc/init.d/nfs-kernel-server restart
+	
+
+i.MX6端挂起mount -t nfs -o nolock 192.168.1.104:/nfsdir /nfs
+4.linux 基础命令
+
+重启网络：sudo /etc/init.d/networking restart
+		
+设置静态ip vi /etc/network/interfaces
+
+解压 tar xzf gz
+
+
