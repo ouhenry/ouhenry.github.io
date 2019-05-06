@@ -7,8 +7,50 @@ cd Python-3.6.8
 sudo ./configure --enable-optimizations
 sudo make altinstall
 python3.6 -V
+
 pip3.6 -V
 ----------
 
+linux 下更新python
+
+先更新apt 仓库
+
+更新apt 
+
+安装python3.6
 
 
+
+1. sudo add-apt-repository ppa:jonathonf/python-3.6
+
+2. sudo apt update
+
+3. sudo apt install python3.6
+
+
+
+更新pycharm 引用版本
+
+/usr/bin/python3.6
+
+
+
+修改linux 配置下的python3的指向python3.6
+
+1. cd /usr/bin
+2. rm python3
+3. cp python3.6 python3
+
+
+
+安装了python3.6以后，由于3.5版本没有卸载干净， 导致点击终端图标不可以打开终端
+
+1. cd  /usr/lib/python3/dist-packages/gi/
+2. cp _gi_cairo.cpython-35m-x86_64-linux-gnu  _gi_cairo.cpython-36m-x86_64-linux-gnu
+3. cp _gi.cpython-35m-x86_64-linux-gnu.so _gi.cpython-36m-x86_64-linux-gnu.so
+
+
+
+
+
+ 
