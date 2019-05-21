@@ -18,4 +18,7 @@ i.MX6端挂起mount -t nfs -o nolock 192.168.1.104:/nfsdir /nfs
 
 解压 tar xzf gz
 
+gcc -L/usr/local/Cellar/libusb/1.0.22/lib -I/usr/local/include/libusb-1.0 usbacc.c -lusb-1.0
 
+-L 引用库lib .so 文件
+-I 引用include .h 文件
