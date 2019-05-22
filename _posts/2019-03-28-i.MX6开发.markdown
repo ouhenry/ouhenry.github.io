@@ -22,3 +22,6 @@ gcc -L/usr/local/Cellar/libusb/1.0.22/lib -I/usr/local/include/libusb-1.0 usbacc
 
 -L 引用库lib .so 文件
 -I 引用include .h 文件
+
+./configure --host=arm-poky-linux --prefix=/home/rick/Desktop/libusb-1.0.22/installlibusb --disable-udev
+
