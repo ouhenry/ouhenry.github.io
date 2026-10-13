@@ -1,18 +1,22 @@
 ---
 layout: post
-title:  "Welcome to swift!"
-date:   2017-07-28 12:51:48 +0800
-categories: swift
+title: "Swift 3.1 初学记录"
+date: 2017-07-28 12:51:48 +0800
+categories: ["移动开发"]
+description: "保存初学 Swift 时的语言示例与练习记录。"
+permalink: "/swift/2017/07/28/swift3_1.html"
+historical: true
 ---
-      吾尝终日而思，不如盱眙之所学也。
 
-# 目标
+吾尝终日而思，不如盱眙之所学也。
+
+## 目标
 
 - **创建一个好的apps**
 - **实现面向对象编程**
 
 
-##iOS的组成
+## iOS的组成
    iOS主要有四大部分Core OS、Core Services、Media、Cocoa Touch。
 
 ### Core OS
@@ -67,5 +71,3 @@ categories: swift
 - **Image Picker**
 - **Controls**     
 - **Camera**
-
-

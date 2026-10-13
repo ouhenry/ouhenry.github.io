@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "第一篇github pages 发表的博客"
+title: "第一篇 GitHub Pages 博客"
 date: 2017-07-03 17:24:48 +0800
-categories: 呢喃
+categories: ["生活记录"]
+description: "从第一篇博客开始，把学习过程和日常思考留在自己的小站。"
+permalink: "/呢喃/2017/07/03/小刀-初试.html"
 ---
+
 怎样优雅的写博客呢
 语言是思维的外衣。成功是你经历过无数次失败之后仍然保持激情。
 哈哈哈哈😆😆😆
@@ -12,5 +15,5 @@ def print_hi(name)
    puts "hi, #{name}"
 end
 print_hi('rickberg')
-#=> prints 'hi, tom' to STDOUT.
+# => prints 'hi, tom' to STDOUT.
 {% endhighlight %}

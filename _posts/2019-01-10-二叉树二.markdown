@@ -1,9 +1,16 @@
-**什么是堆**
+---
+layout: post
+title: "堆与优先队列：最大堆的实现"
+date: 2019-01-10 12:00:00 +0800
+categories: ["数据结构"]
+description: "从完全二叉树和堆序性出发，整理最大堆的创建、插入、删除与建堆操作。"
+permalink: "/2019/01/10/二叉树二.html"
+---
 
+## 什么是堆
 >优先队列（Priority Queue）:特殊的“队列”，取出元素的顺序是依照元素的优先权（关键字）大小，而不是元素进入队列的先后顺序。
 
-**堆的两个特性**
-
+## 堆的两个特性
 - 机构性：用数组表示的完全二叉树；
 - 有序性：任一节点的关键字是其子树所有节点的最大值（或最小值）
 
@@ -12,16 +19,14 @@
 
 
 
-**最大堆**
-
+## 最大堆
 - MaxHeap Creat(int MaxSize)：创建一个空的最大堆。
 - Boolean IsFull(MaxHeap H): 判断最大堆H是否已满。
 - Insert(MaxHeap H, ElementType item): 将元素item插入最大堆H。
 - Boolean IsEmpty(MaxHeap H):判断最大堆H是否为空。
 - ElementType DeleteMax(MaxHeap H):返回H中最大元素（高优先级）
 
-**定义堆**
-
+## 定义堆
 	typedef struct HNode *Heap; /* 堆的类型定义 */
 	struct HNode {
     	ElementType *Data; /* 存储元素的数组 */
@@ -33,8 +38,7 @@
  
 define MAXDATA 1000  /* 该值应根据具体情况定义为大于堆中所有可能元素的值 */
 
-**创建堆**
-
+## 创建堆
 	MaxHeap CreateHeap( int MaxSize )
 	{ /* 创建容量为MaxSize的空的最大堆 */
  
@@ -47,15 +51,13 @@ define MAXDATA 1000  /* 该值应根据具体情况定义为大于堆中所有�
     	return H;
 	}
 
-**判断堆是否已满**
-
+## 判断堆是否已满
 	bool IsFull( MaxHeap H )
 	{
     	return (H->Size == H->Capacity);
 	}
 
-**插入**
-
+## 插入
 	bool Insert( MaxHeap H, ElementType X )
 	{ /* 将元素X插入最大堆H，其中H->Data[0]已经定义为哨兵 */
     	int i;
@@ -73,15 +75,13 @@ define MAXDATA 1000  /* 该值应根据具体情况定义为大于堆中所有�
  
 define ERROR -1 /* 错误标识应根据具体情况定义为堆中不可能出现的元素值 */
 
-**判断是否为空**
-
+## 判断是否为空
 	bool IsEmpty( MaxHeap H )
 	{
     	return (H->Size == 0);
 	}
 
-**删除**
-
+## 删除
 	ElementType DeleteMax( MaxHeap H )
 	{ /* 从最大堆H中取出键值为最大的元素，并删除一个结点 */
     	int Parent, Child;
@@ -108,8 +108,7 @@ define ERROR -1 /* 错误标识应根据具体情况定义为堆中不可能出�
     	return MaxItem;
 	} 
 
-**建造最大堆**
-
+## 建造最大堆
 - 方法1：通过插入操作，将N个元素一个一个相继插入到一个初始为空的堆中去，其时间代价最大为O（N logN）
 - 方法2：在线性时间复杂度下建立最大堆。
 1）将N个元素按输入顺序存入，先满足完全二叉树的结构特性。（2）调整各结点位置，以满足最大对的有序特性。

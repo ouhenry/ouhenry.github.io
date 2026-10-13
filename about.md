@@ -1,18 +1,30 @@
 ---
 layout: page
-title: About
+title: 你好，我是 Henry。
+eyebrow: THE PERSON BEHIND THE NOTES
 permalink: /about/
+description: 一个关于学习、记录与慢慢积累的小站。
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## 关于「跬步」
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+不积跬步，无以至千里。这个小站始于 2017 年，用来保存学习时的笔记、动手实践的过程，以及日常里值得记下的片段。
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+我希望这里的文字，不只是知识的摘录，也是把问题想清楚的过程。写下来，方便未来的自己回看，也希望能给正在学习同样内容的人一点帮助。
 
+## 在这里可以读到什么
 
-[jekyll-organization]: https://github.com/jekyll
+- **数据结构**：线性表、栈、队列、树和图，反复理解那些重要的基础。
+- **移动开发**：Android 与 Swift 的学习记录，以及开发中的实践笔记。
+- **工程实践**：开发环境、工具配置和嵌入式开发中留下的操作记录。
+- **学习与生活**：数学、机器学习、写作工具，还有代码之外的小小兴趣。
+
+## 关于这些笔记
+
+这里保留了不同阶段的学习痕迹。有些文章还很简短，有些记录对应的是较早的软件版本。它们代表当时的理解，也可能有疏漏；如果发现问题，欢迎通过 GitHub 交流。
+
+学习不一定要很快，但可以一直向前。
+
+## 保持联系
+
+[GitHub：ouhenry](https://github.com/ouhenry) · [邮件联系](mailto:huangcsdn@163.com) · [通过 RSS 订阅]({{ '/feed.xml' | relative_url }})

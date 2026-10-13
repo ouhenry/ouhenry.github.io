@@ -1,4 +1,13 @@
-#什么是队列
+---
+layout: post
+title: "队列：先进先出的数据结构"
+date: 2019-01-08 12:00:00 +0800
+categories: ["数据结构"]
+description: "记录队列的基本操作、顺序存储与循环队列的实现思路。"
+permalink: "/2019/01/08/队列.html"
+---
+
+## 什么是队列
 
 具有一定操作约束的线性表、
 
@@ -10,7 +19,7 @@
 - *先进先出*： FIFO
 
 
-**操作集**
+## 操作集
 
 1. Queue CreateQueue(int MaxSize):生成长度为MaxSize的空队列；
 2. int IsFullQ(Queue Q, int MaxSize):判断队列Q是否已满；
@@ -18,8 +27,7 @@
 4. int IsEmptyQ(Queue Q):判断Q是否为空；
 5. ElementType DeleteQ(Queue Q):将队头数据元素从队列中删除并返回。
 
-**队列的顺序存储实现**
-
+## 队列的顺序存储实现
 队列的顺序存储结构通常由一个一维数组和一个记录队列头元素位置的变量front以及一个记录队列尾元素位置的rear组成。
 
 	typedef int Position;
@@ -30,7 +38,7 @@
 	};
 	typedef struct QNode *Queue;
 
-1.创建队列
+1. 创建队列
 
 	Queue CreateQueue(int MaxSize)
 	{
@@ -41,14 +49,14 @@
     	return Q;
 	}
 
-2.判断队列是否满
+2. 判断队列是否满
 
 	bool IsFull(Queue Q)
 	{
     	return ((Q->Rear+1)%Q->MaxSize == Q->Front);
 	}
 
-3.添加
+3. 添加
 
 	bool AddQ( Queue Q, ElementType X)
 	{
@@ -63,14 +71,14 @@
     	}
 }
 
-4.判断是否为空
+4. 判断是否为空
 
 	bool IsEmpty( Queue Q )
 	{
     	return (Q->Front == Q->Rear);
 	}
 
-5.删除元素
+5. 删除元素
 
 	ElementType DeleteQ(Queue Q)
 	{
@@ -84,8 +92,7 @@
     	}
 	}
 
-**队列的链式存储实现**
-
+## 队列的链式存储实现
 队列的链式存储结构也可以用一个单链表实现。插入和删除操作分别在链表的两头进行；
 
 	typedef struct Node *PtrToNode;
@@ -101,14 +108,14 @@
 	};
 	typedef struct QNode *Queue;
 
-1.判空
+1. 判空
 
 	bool IsEmpty( Queue Q )
 	{
     	return ( Q->Front == NULL);
 	}
 
-2.删除
+2. 删除
 
 	ElementType DeleteQ( Queue Q )
 	{

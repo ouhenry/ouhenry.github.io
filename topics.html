@@ -1,0 +1,7 @@
+---
+layout: default
+title: 探索主题
+description: 知识之间，总有新的连接。从一个感兴趣的主题开始阅读。
+permalink: /topics/
+---
+<div class="shell page-wrap"><header class="page-heading"><p class="eyebrow">FOLLOW YOUR CURIOSITY</p><h1>顺着兴趣，继续探索<span class="accent">。</span></h1><p>{{ page.description }}</p></header><nav class="topic-jump" aria-label="主题索引">{% for topic in site.data.topics %}<a href="#{{ topic.name | slugify }}">{{ topic.name }} ↘</a>{% endfor %}</nav><div class="topics-grid">{% for topic in site.data.topics %}<section class="topic-section" id="{{ topic.name | slugify }}"><span class="feature-index">{{ topic.number }}</span><h2>{{ topic.name }}<small>{{ site.categories[topic.name].size | default: 0 }} 篇</small></h2><p>{{ topic.description }}</p><ul>{% for post in site.categories[topic.name] %}<li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}<span>↗</span></a></li>{% endfor %}</ul></section>{% endfor %}</div></div>

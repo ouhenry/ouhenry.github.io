@@ -1,3 +1,13 @@
+---
+layout: post
+title: "学术检索与阅读资源备忘"
+date: 2019-07-12 12:00:00 +0800
+categories: ["学习札记"]
+description: "整理曾经使用过的论文检索、书籍阅读与期刊查询入口，作为历史资源备忘。"
+permalink: "/2019/07/12/知识网站.html"
+historical: true
+---
+
 论文下载：
 
 1, https://xue.glgoo.net/#__NO_LINK_PROXY__  (谷歌学术)
@@ -27,4 +37,4 @@
 2，http://www.letpub.com.cn/index.php?page=journalapp&view=search  （Letpub 这个把期刊缩写，IF, 分区，等等全部呈现）
 
 3，http://www.medsci.cn/sci/  （和上面的差不多，医学期刊较多，其他的也可以，不常用）
---------------------- 
+---------------------

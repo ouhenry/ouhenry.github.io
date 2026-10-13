@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Python 3 安装与环境配置"
+date: 2019-04-22 12:00:00 +0800
+categories: ["工程实践"]
+description: "整理 Python 3 安装过程中的操作步骤与环境配置笔记。"
+permalink: "/2019/04/22/安装Python3.html"
+historical: true
+---
+
 sudo apt-get install build-essential checkinstall
 sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 cd /usr/src
@@ -48,9 +58,3 @@ linux 下更新python
 1. cd  /usr/lib/python3/dist-packages/gi/
 2. cp _gi_cairo.cpython-35m-x86_64-linux-gnu  _gi_cairo.cpython-36m-x86_64-linux-gnu
 3. cp _gi.cpython-35m-x86_64-linux-gnu.so _gi.cpython-36m-x86_64-linux-gnu.so
-
-
-
-
-
- 

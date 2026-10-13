@@ -1,18 +1,28 @@
-##机器学习的目标##
+---
+layout: post
+title: "机器学习入门：方向与工具"
+date: 2017-11-09 12:00:00 +0800
+categories: ["学习札记"]
+description: "记录机器学习的应用方向，以及 NumPy、SciPy 等工具的初步认识。"
+permalink: "/2017/11/09/机器学习1.html"
+---
+
+## 机器学习的目标
     机器学习的算法来解决问题或者进行机器学习的研究。
 
-##可以运用的项目##
-1.机器学习算法来控制机器
-2.改进学习型算法
-3.自动化飞行的飞机
-4.计算机视觉的算法
-5.医疗机器人
-6.形体切割
-7.理解大脑的神经科学
-8.大脑扫描的FONRI数据的分析
-9.证券交易
-10.使用学习型算法使一个人脸变得更加具有新引力。
-11.光学错觉。
+## 可以运用的项目
+
+1. 机器学习算法来控制机器
+2. 改进学习型算法
+3. 自动化飞行的飞机
+4. 计算机视觉的算法
+5. 医疗机器人
+6. 形体切割
+7. 理解大脑的神经科学
+8. 大脑扫描的FONRI数据的分析
+9. 证券交易
+10. 使用学习型算法使一个人脸变得更加具有新引力。
+11. 光学错觉。
 
 
 numpy & scipy : python的数值计算 & 科学计算基础工具。
@@ -21,4 +31,3 @@ scikit-image : Image processing in Python, 这个没用过，图像方面的可�
 xgboost : 梯度增强算法库，c++写的，有python接口。
 vowpal_wabbit: a fast out-of-core learning system sponsored by Microsoft Research and (previously) Yahoo! Research. 
 DMLC | Distributed (Deep) Machine Learning Common 的一系列项目
-

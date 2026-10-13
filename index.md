@@ -1,6 +1,4 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+description: Henry 的个人学习博客，记录数据结构、移动开发、工程实践与生活。把学到的，变成自己的。
 ---

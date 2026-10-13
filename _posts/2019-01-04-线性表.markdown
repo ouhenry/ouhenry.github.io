@@ -1,12 +1,17 @@
 ---
 layout: post
-title:  "线性表"
-date:   2019-01-04 16:24:48 +0800
-categories: 数据结构
+title: "线性表：从顺序存储到链式存储"
+date: 2019-01-04 16:24:48 +0800
+categories: ["数据结构"]
+description: "梳理线性表的定义、顺序表与链表的存储方式，以及插入、删除等基础操作。"
+permalink: "/数据结构/2019/01/04/线性表.html"
+featured: true
 ---
 
-**线性表： 由同类型数据元素构成有序序列的线性结构**
 
+线性表描述的是一组有先后关系的元素。这份笔记围绕两种存储方式展开：用连续空间存放元素的顺序表，以及通过指针连接节点的链表。阅读时可以对照它们的访问方式与插入、删除操作，理解时间开销与空间组织之间的关系。
+
+## 线性表： 由同类型数据元素构成有序序列的线性结构
 - 表中元素个数称为线性表的*长度*
 - 线性表没有元素时，称为*空表*
 - 表起始位置称为表头，表结束位置称为*表尾*
@@ -20,8 +25,7 @@ categories: 数据结构
 5. void Delete(int i, List L):删除制定位序i的元素；
 6. int Length(List L):返回线性表L的长度n.
 
-**线性表的顺序存储实现**
-
+## 线性表的顺序存储实现
     typedef struct LNode *List;
 
 	structLNode{
@@ -31,7 +35,7 @@ categories: 数据结构
 	struct LNode L;
 	List PtrL;
 
-1.初始化（建立空的顺序表）
+1. 初始化（建立空的顺序表）
     
 	List MakeEmpty()
 
@@ -41,7 +45,7 @@ categories: 数据结构
 		return PtrL;
 	}
 
-2.查找
+2. 查找
 	
 	int Find(ElementType X, List PtrL)
 	{	int i = 0;
@@ -51,7 +55,7 @@ categories: 数据结构
 		else return i;
 	}
 
-3.插入操作实现
+3. 插入操作实现
 
     void Insert(ElementType X, int i, List PtrL)
 	{	int j;
@@ -70,7 +74,7 @@ categories: 数据结构
 		return;
 	}
 
-4.删除（删除表的第i(1 <= i <= n)个位置上的元素）
+4. 删除（删除表的第i(1 <= i <= n)个位置上的元素）
 
     void Delete(int i, List PtrL)
 	{	int j;
@@ -84,8 +88,7 @@ categories: 数据结构
 		return;
 	}
 
-**线性表的链式存储**
-
+## 线性表的链式存储
 不要求逻辑上相邻的两个元素物理上也相邻；通过“链”立起数据元素之间的逻辑关系。
 插入、删除不需要移动数据元素，只需要修改“链”
 
@@ -99,7 +102,7 @@ categories: 数据结构
 
 主要操作的实现
 
-1.求表长
+1. 求表长
     
     intLength(List PtrL)
 	{ 
@@ -112,7 +115,7 @@ categories: 数据结构
 		return j;
 	}
 
-2.查找
+2. 查找
 
 （1）按序号查找：FindKth;
 
@@ -138,7 +141,7 @@ categories: 数据结构
 		reutrn p;
 	}
 
-3.插入操作实现
+3. 插入操作实现
 
     List Inster(ElementType X, int i, List PtrL)
 	{
@@ -162,7 +165,7 @@ categories: 数据结构
 		}
 	}
 
-4.删除操作实现
+4. 删除操作实现
 
     List Delete(int i, List PtrL)
 	{

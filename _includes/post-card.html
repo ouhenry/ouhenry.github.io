@@ -1,0 +1,6 @@
+<article class="post-card">
+  <div class="card-meta"><a href="{{ '/topics/' | relative_url }}#{{ post.categories.first | slugify }}">{{ post.categories.first }}</a><span>{{ post.date | date: '%Y.%m.%d' }}</span></div>
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+  <p>{{ post.description | escape }}</p>
+  <a class="read-link" href="{{ post.url | relative_url }}" aria-label="阅读：{{ post.title | escape }}">阅读笔记 <span aria-hidden="true">↗</span></a>
+</article>
